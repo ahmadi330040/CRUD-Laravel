@@ -15,19 +15,22 @@ Route::get('/', function () {
     return view('tables.tables');
 });
 
-Route::get('/data-tables', function () {
-    return view('tables.data-tables');
-});
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
 
-Route::get('/master', function(){
-    return view('adminlte.master');
-});
+// Route::get('/data-tables', function () {
+//     return view('tables.data-tables');
+// });
 
-Route::get('/items', function() {
-    return view('items.index');
-});
+// Route::get('/master', function(){
+//     return view('adminlte.master');
+// });
 
-Route::get('/items/create', function() {
-    return view('items.create');
-});
+// Route::get('/items', function() {
+//     return view('items.index');
+// });
+
+// Route::get('/items/create', function() {
+//     return view('items.create');
+// });
 
