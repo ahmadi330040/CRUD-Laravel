@@ -1,4 +1,4 @@
-@extends('adminlte.master');
+@extends('adminlte.master')
 
 @section('content')
 <form action="/pertanyaan" method="POST">
