@@ -32,7 +32,7 @@
  
   <div class="card">
     <div class="card-body">
-      <table> @yield('content')</table>
+     @yield('content')
     </div>
   </div>
   </div>

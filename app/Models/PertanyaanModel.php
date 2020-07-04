@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Support\Facades\DB;
 
-class pertanyaanModel {
+class PertanyaanModel {
     public static function get_all() {
         $pertanyaan = DB::table('pertanyaan')->get();
         return $pertanyaan;

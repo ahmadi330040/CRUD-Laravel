@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('tables.tables');
 });
 
-Route::get('/pertanyaan', 'PertanyaanController@index');
-Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::get('/pertanyaan', 'PertanyaanController@index'); //menampilkan semua
+Route::get('/pertanyaan/create', 'PertanyaanController@create'); //menampilkan halaman form
+Route::post('/pertanyaan', 'PertanyaanController@store'); // menampilkan data
 
 // Route::get('/data-tables', function () {
 //     return view('tables.data-tables');
