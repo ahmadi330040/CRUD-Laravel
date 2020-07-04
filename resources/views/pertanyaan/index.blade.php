@@ -15,7 +15,7 @@
             
         <div class="post">
           <div class="user-block">
-            <span class="username">
+            <span class="title">
               <a href="#">{{ $pertanyaan->judul }}</a>
               {{-- <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a> --}}
             </span>
@@ -28,6 +28,16 @@
               <a href="/pertanyaan/{{$pertanyaan->id}}" class="link-black text-sm">
                 <i class="far fa-comments mr-1"></i>Lihat Jawaban
               </a>
+              <a href="/pertanyaan/{{$pertanyaan->id}}/edit" class="link-black text-sm">
+                <i class="fas fa-edit mr-1 ml-3"></i>Edit Pertanyaan
+              </a>
+            <form action="/pertanyaan/{{$pertanyaan->id}}" method="post">
+              @csrf
+              @method('DELETE')
+              <a href="/pertanyaan/{{$pertanyaan->id}}" class="link-black text-sm">
+                <i class="fas fa-trash mr-1"></i>Hapus Pertanyaan
+              </a>
+              </form>
             </span>
           </p>
             {{-- <input class="form-control form-control-sm" type="text" placeholder="Type a comment"> --}}
