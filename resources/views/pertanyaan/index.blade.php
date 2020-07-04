@@ -1,32 +1,43 @@
 @extends('adminlte.master')
 
 @section('content')
-<div class="ml-3 mt-3">
-  <h1></h1>
-  <a href="/pertanyaan/create" class="btn btn-primary mb-3">
-   Buat Pertanyaan
-  </a>
-  <table class="table table-bordered">
-    <thead>                  
-      <tr>
-        <th style="width: 10px">#</th>
-        <th>Judul</th>
-        <th>Isi</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($pertanyaan as $key => $pertanyaan)
-      <tr>
-        <td> {{$key+1}} </td>
-        <td> {{ $pertanyaan->judul }} </td>
-        <td> {{ $pertanyaan->isi }} </td>
-      </tr>
+<div class="card">
+  <div class="card-header p-2">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Buat Pertanyaan</a></li>
+    </ul>
+  </div><!-- /.card-header -->
+  <div class="card-body">
+    <div class="tab-content">
+      <div class="active tab-pane" id="activity">
+        <!-- Post -->
+        @foreach ($pertanyaan as $key => $pertanyaan)
+            
+        <div class="post">
+          <div class="user-block">
+            <span class="username">
+              <a href="#">{{ $pertanyaan->judul }}</a>
+              {{-- <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a> --}}
+            </span>
+            {{-- <span class="description">Shared publicly - 7:30 PM today</span> --}}
+          </div>
+          <!-- /.user-block -->
+        <p>{{$pertanyaan->isi}}</p>
 
-      @endforeach
-
-        
-    </tbody>
-  </table>
-</div>  
+          <p>
+              <a href="/pertanyaan/{{$pertanyaan->id}}" class="link-black text-sm">
+                <i class="far fa-comments mr-1"></i>Lihat Jawaban
+              </a>
+            </span>
+          </p>
+            {{-- <input class="form-control form-control-sm" type="text" placeholder="Type a comment"> --}}
+        </div>
+        @endforeach
+        <!-- /.post -->
+      </div>
+    </div>
+    <!-- /.tab-content -->
+  </div><!-- /.card-body -->
+</div>
 
 @endsection

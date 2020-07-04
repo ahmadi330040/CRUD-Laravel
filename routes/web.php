@@ -12,12 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('tables.tables');
+    return view('welcome');
 });
 
 Route::get('/pertanyaan', 'PertanyaanController@index'); //menampilkan semua
 Route::get('/pertanyaan/create', 'PertanyaanController@create'); //menampilkan halaman form
 Route::post('/pertanyaan', 'PertanyaanController@store'); // menampilkan data
+Route::get('/pertanyaan/{id}', 'PertanyaanController@show'); //menampilkan detail item dengan id
 
 // Route::get('/data-tables', function () {
 //     return view('tables.data-tables');
